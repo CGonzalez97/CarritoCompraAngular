@@ -1,0 +1,14 @@
+<div class="contenedor" *ngFor="let articulo of listaArticulos">
+    <div>{{articulo.nombre}}</div>
+    <div>{{articulo.descripcion}}</div>
+    <!--<div>{{articulo.color}}</div>-->
+    <div>Talla: {{articulo.talla}}</div>
+    <div>
+        <div>Precio: {{articulo.precio}}€</div>
+        <div *ngIf="articulo.rebajado">Precio rebajado: {{articulo.precioRebajado}}€</div>
+    </div>
+    <div>
+        <button></button>
+        <button></button>
+    </div>
+</div>
