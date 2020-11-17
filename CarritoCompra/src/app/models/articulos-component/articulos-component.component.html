@@ -20,6 +20,7 @@
             <th>Descripción</th>
             <th>Talla</th>
             <th>Precio</th>
+            <th>Cantidad</th>
             <th></th>
         </tr>
     </thead>
@@ -27,17 +28,26 @@
         <tr *ngFor="let articulo of listaArticulos">
             <td>{{articulo.nombre}}</td>
             <td>{{articulo.descripcion}}</td>
-            <td>Talla: {{articulo.talla}}</td>
-            <td><div>
-                <div>Precio: {{articulo.precio}}€</div>
-                <div *ngIf="articulo.rebajado">Precio rebajado: {{articulo.precioRebajado}}€</div>
-            </div></td>
+            <td>{{articulo.talla}}</td>
             <td>
                 <div>
-                    <button class="btn btn-outline-secondary mx-1">+</button>
-                    <button class="btn btn-outline-secondary mx-1">-</button>
+                <div>{{articulo.precio}}€</div>
+                <div *ngIf="articulo.rebajado" class="precioRebajado">{{articulo.precioRebajado}}€</div>
                 </div>
+            </td>
+            <td>
+                x{{articulo.cantidad}}
+            </td>
+            <td>
+                <div>
+                    <button class="btn btn-outline-secondary mx-1" (click)="articulo.incrementarCantidad()" (click)="calcularTotalCarrito()">+</button>
+                    <button class="btn btn-outline-secondary mx-1" (click)="articulo.decrementarCantidad()" (click)="calcularTotalCarrito()">-</button>
+                </div>
+            </td>
+            <td>
+                <button class="btn btn-outline-secondary mx-1" (click)="eliminarProducto(articulo)">Eliminar</button>
             </td>
         </tr>
     </tbody>
 </table>
+<h1>Total :{{total}}€</h1>

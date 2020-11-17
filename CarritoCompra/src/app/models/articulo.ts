@@ -20,4 +20,13 @@ export class Articulo{
         this.rebajado = rebajado;
         this.cantidad = cantidad;
     }
+
+
+    incrementarCantidad(){
+        this.cantidad++;
+    }
+
+    decrementarCantidad(){
+        this.cantidad--;
+    }
 }
