@@ -13,6 +13,7 @@
 </div>-->
 
 <!--table-bordered-->
+<app-banner></app-banner>
 <table class="table dark-table" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
@@ -26,7 +27,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let articulo of listaArticulos">
-            <td>{{articulo.nombre}}</td>
+            <td>{{articulo.nombre | uppercase}}</td>
             <td>{{articulo.descripcion}}</td>
             <td>{{articulo.talla}}</td>
             <td>
