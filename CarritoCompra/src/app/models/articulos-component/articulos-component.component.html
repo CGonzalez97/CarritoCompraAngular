@@ -31,8 +31,8 @@
             <td>{{articulo.talla}}</td>
             <td>
                 <div>
-                <div>{{articulo.precio}}€</div>
-                <div *ngIf="articulo.rebajado" class="precioRebajado">{{articulo.precioRebajado}}€</div>
+                <div>{{articulo.precio | currency:'EUR':'symbol'}}</div>
+                <div *ngIf="articulo.rebajado" class="precioRebajado">{{articulo.precioRebajado | currency:'EUR':'symbol'}}</div>
                 </div>
             </td>
             <td>
@@ -49,5 +49,8 @@
             </td>
         </tr>
     </tbody>
-</table>
-<h1>Total :{{total}}€</h1>
+</table><!--| currency:'EUR':'symbol'-->
+<h1>Total :{{total | currency:'EUR':'symbol'}}</h1>
+<footer>
+    <h3>{{mostrarCopyright() | date:"®yyyy"}}</h3>
+</footer>

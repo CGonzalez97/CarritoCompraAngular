@@ -42,4 +42,9 @@ export class ArticulosComponentComponent implements OnInit {
     this.calcularTotalCarrito();
   }
 
+  mostrarCopyright(){
+    //let mensaje:string = '®';//169 en unicode
+    return new Date;  
+  }
+
 }

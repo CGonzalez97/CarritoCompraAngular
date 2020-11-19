@@ -1,0 +1,5 @@
+<div *ngIf="genero == 'hombre'" class="jumbotron hombre"></div>
+<div *ngIf="genero == 'mujer'" class="jumbotron mujer"></div>
+
+<input type="radio" value="hombre" [ngModel]="genero">Hombre
+<input type="radio" value="mujer" [ngModel]="genero">Mujer
